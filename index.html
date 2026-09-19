@@ -3,6 +3,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sara Abdelmoniem | Flutter App Developer</title>
+  <meta name="description" content="Sara Abdelmoniem is a Flutter app developer and Computer Science student at Ain Shams University. Explore her projects, experience, and skills.">
+  <meta name="theme-color" content="#4A4A4A">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sara Abdelmoniem | Flutter App Developer">
+  <meta property="og:description" content="Flutter app developer building interactive, user-friendly mobile apps. See my projects, experience, and skills.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sara Abdelmoniem | Flutter App Developer">
+  <meta name="twitter:description" content="Flutter app developer building interactive, user-friendly mobile apps.">
+  <!-- To show a preview image when the link is shared, add after publishing (needs the full site URL):
+       <meta property="og:image" content="https://YOUR-SITE-URL/images/profile.jpg"> -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23F7D6D0'/%3E%3Ctext x='32' y='42' font-size='28' font-weight='700' text-anchor='middle' font-family='Georgia,serif' fill='%234A4A4A'%3ESA%3C/text%3E%3C/svg%3E">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
   <style>
     :root {
@@ -118,6 +129,35 @@
 
     .project-list li + li { margin-top: .55rem; }
 
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: .35rem .85rem;
+    }
+
+
+    .skill-btn {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(226, 180, 189, .55);
+      border-radius: 999px;
+      padding: .5rem 1.05rem;
+      background: rgba(255, 245, 245, .04);
+      transition: background .2s ease, color .2s ease, transform .2s ease, border-color .2s ease;
+      cursor: default;
+    }
+
+    .skill-btn:hover {
+      background: var(--pink);
+      border-color: var(--pink);
+      transform: translateY(-2px);
+    }
+
+    .skill-btn:hover { color: #3A3A3A !important; }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after {
@@ -126,6 +166,19 @@
       }
     }
   </style>
+  <script>
+    const AVATAR_FALLBACK = "https://drive.google.com/thumbnail?id=1VbN8G954CGgeq-foZMtRX8aF4tN3T_jw&sz=w1000";
+    function handleAvatarError(img) {
+      if (!img.dataset.tried) { img.dataset.tried = "1"; img.src = AVATAR_FALLBACK; return; }
+      img.onerror = null;
+      const box = document.createElement("div");
+      box.className = "flex h-40 w-40 items-center justify-center rounded-full border-4 border-[#F7D6D0] bg-[#575757] serif text-4xl font-bold text-[#F7D6D0] shadow-2xl sm:h-48 sm:w-48";
+      box.textContent = "SA";
+      box.setAttribute("role", "img");
+      box.setAttribute("aria-label", img.alt);
+      img.replaceWith(box);
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
   <script src="/_sdk/8de366929c5f3b48.data_sdk.js" type="text/javascript" integrity="sha512-TyQ8k8cZj66xe/aENmn6RyZpdOFZXbAo5+KBG3PeFM+Q4qMTHU8xAqmq4ADClNfPrstgQYV6OzZHwLTnElzB2g=="></script>
@@ -136,11 +189,11 @@
   <div class="site-shell">
    <header class="sticky top-0 z-50 border-b border-[#E2B4BD]/35 bg-[#4A4A4A]/95 backdrop-blur">
     <nav data-template-id="site-nav" class="canva-menu mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-3 md:px-8" aria-label="Primary navigation" style="background: rgb(74, 74, 74);"><a href="#cover" class="serif text-xl font-bold text-[#FFF5F5] focus-ring" aria-label="Go to cover">SA</a> <button id="menu-button" type="button" class="focus-ring rounded-xl bg-[#F7D6D0] p-2 text-[#3A3A3A] md:hidden" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu"> <i data-lucide="menu" aria-hidden="true"></i> </button>
-     <div class="hidden items-center gap-1 md:flex"><a class="nav-link focus-ring rounded-full px-3 py-2 text-sm font-semibold" href="#about">About</a> <a class="nav-link focus-ring rounded-full px-3 py-2 text-sm font-semibold" href="#skills">Tools</a> <a class="nav-link focus-ring rounded-full px-3 py-2 text-sm font-semibold" href="#experience">Experience</a> <a class="nav-link focus-ring rounded-full px-3 py-2 text-sm font-semibold" href="#services">Services</a> <a class="nav-link focus-ring rounded-full px-3 py-2 text-sm font-semibold" href="#contact">Contact</a>
+     <div class="hidden items-center gap-1 md:flex"><a class="nav-link focus-ring rounded-full px-2.5 py-2 text-sm font-semibold" href="#about">About</a> <a class="nav-link focus-ring rounded-full px-2.5 py-2 text-sm font-semibold" href="#usp">Why Me</a> <a class="nav-link focus-ring rounded-full px-2.5 py-2 text-sm font-semibold" href="#education">Education</a> <a class="nav-link focus-ring rounded-full px-2.5 py-2 text-sm font-semibold" href="#skills">Skills</a> <a class="nav-link focus-ring rounded-full px-2.5 py-2 text-sm font-semibold" href="#experience">Experience</a> <a class="nav-link focus-ring rounded-full px-2.5 py-2 text-sm font-semibold" href="#projects">Projects</a> <a class="nav-link focus-ring rounded-full px-2.5 py-2 text-sm font-semibold" href="#services">Services</a> <a class="nav-link focus-ring rounded-full px-2.5 py-2 text-sm font-semibold" href="#contact">Contact</a>
      </div>
     </nav>
     <div id="mobile-menu" class="hidden border-t border-[#E2B4BD]/30 bg-[#4A4A4A] px-5 pb-4 md:hidden">
-     <div class="grid gap-1 pt-3"><a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#about">About</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#usp">Why Me</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#education">Education</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#skills">Tools</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#experience">Experience</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#services">Services</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#contact">Contact</a>
+     <div class="grid gap-1 pt-3"><a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#about">About</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#usp">Why Me</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#education">Education</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#skills">Skills</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#experience">Experience</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#projects">Projects</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#services">Services</a> <a class="nav-link focus-ring rounded-xl px-3 py-2 font-semibold" href="#contact">Contact</a>
      </div>
     </div>
    </header>
@@ -148,10 +201,14 @@
     <section id="cover" class="section-anchor surface-deep relative flex items-center justify-center overflow-hidden px-5 py-20 sm:py-24">
      <div class="absolute inset-0 opacity-50" style="background-image:radial-gradient(circle at 18% 18%, rgba(226,180,189,.28) 0, transparent 27%), radial-gradient(circle at 82% 76%, rgba(247,214,208,.23) 0, transparent 25%);"></div>
      <div class="relative flex flex-col items-center text-center">
-      <div class="hero-orbit relative mb-8 flex h-44 w-44 items-center justify-center sm:h-52 sm:w-52"><img data-template-id="profile-placeholder" class="canva-image h-40 w-40 rounded-full border-4 border-[#F7D6D0] object-cover shadow-2xl sm:h-48 sm:w-48" src="https://drive.google.com/thumbnail?id=1VbN8G954CGgeq-foZMtRX8aF4tN3T_jw&amp;sz=w1000" alt="Portrait of Sara Abdelmoniem">
+      <div class="hero-orbit relative mb-8 flex h-44 w-44 items-center justify-center sm:h-52 sm:w-52"><img data-template-id="profile-placeholder" class="canva-image h-40 w-40 rounded-full border-4 border-[#F7D6D0] object-cover shadow-2xl sm:h-48 sm:w-48" src="images/profile.jpg" alt="Portrait of Sara Abdelmoniem" onerror="handleAvatarError(this)">
       </div>
       <h1 data-template-id="hero-name" class="canva-text serif reveal text-center font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 32px;">Sara Abdelmoniem</h1>
       <p data-template-id="hero-title" class="canva-text reveal mt-3 text-center font-semibold" style="animation-delay: 0.12s; color: rgb(247, 214, 208); font-weight: 600; font-style: normal; font-size: 19px;">Flutter App Developer</p>
+      <div class="reveal mt-8 flex flex-col items-center gap-3 sm:flex-row" style="animation-delay: 0.24s;">
+       <a data-template-id="cover-projects-button" class="canva-button focus-ring inline-flex items-center gap-2 rounded-full px-6 py-3 font-bold" href="#projects" style="background: rgb(247, 214, 208); color: rgb(58, 58, 58);"><i data-lucide="folder-open" aria-hidden="true"></i><span class="canva-text" style="color: rgb(58, 58, 58); font-weight: 700; font-style: normal; font-size: 16px;">View Projects</span></a>
+       <a data-template-id="cover-contact-button" class="canva-button focus-ring inline-flex items-center gap-2 rounded-full border border-[#E2B4BD] px-6 py-3 font-bold transition hover:border-[#F7D6D0] hover:text-[#F7D6D0]" href="#contact" style="color: rgb(255, 245, 245);"><i data-lucide="mail" aria-hidden="true"></i><span class="canva-text" style="color: inherit; font-weight: 700; font-style: normal; font-size: 16px;">Contact</span></a>
+      </div>
      </div>
     </section>
     <section id="about" class="section-anchor surface-main px-5 py-20 sm:px-8">
@@ -217,148 +274,259 @@
     </section>
     <section id="skills" class="section-anchor surface-deep px-5 py-20 sm:px-8">
      <div class="mx-auto w-full max-w-7xl">
-      <p data-template-id="skills-kicker" class="canva-text font-bold uppercase tracking-[.2em]" style="color: rgb(247, 214, 208); font-weight: 400; font-style: normal; font-size: 13px;">Toolkit</p>
-      <h2 data-template-id="skills-heading" class="canva-text serif mt-3 font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 24px;">Tools I Enjoy Building With</h2>
-      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-       <article data-template-id="skill-card-mobile" class="canva-card lift min-w-0 rounded-3xl border border-[#E2B4BD]/35 p-6" style="background: rgb(74, 74, 74);"><i data-lucide="smartphone" class="icon-accent mb-5" aria-hidden="true"></i>
-        <h3 data-template-id="skill-mobile-title" class="canva-text font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Mobile Development</h3>
-        <p data-template-id="skill-mobile-items" class="canva-text mt-3 break-words leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Flutter · Dart · GetX</p>
-       </article>
-       <article data-template-id="skill-card-web" class="canva-card lift min-w-0 rounded-3xl border border-[#E2B4BD]/35 p-6" style="background: rgb(74, 74, 74);"><i data-lucide="code-2" class="icon-accent mb-5" aria-hidden="true"></i>
-        <h3 data-template-id="skill-web-title" class="canva-text font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Web Development</h3>
-        <p data-template-id="skill-web-items" class="canva-text mt-3 break-words leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">HTML · CSS · JavaScript</p>
-       </article>
-       <article data-template-id="skill-card-programming" class="canva-card lift min-w-0 rounded-3xl border border-[#E2B4BD]/35 p-6" style="background: rgb(74, 74, 74);"><i data-lucide="terminal" class="icon-accent mb-5" aria-hidden="true"></i>
-        <h3 data-template-id="skill-programming-title" class="canva-text font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Programming &amp; Version Control</h3>
-        <p data-template-id="skill-programming-items" class="canva-text mt-3 break-words leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">C++ · Git/GitHub</p>
-       </article>
-       <article data-template-id="skill-card-design" class="canva-card lift min-w-0 rounded-3xl border border-[#E2B4BD]/35 p-6" style="background: rgb(74, 74, 74);"><i data-lucide="pen-tool" class="icon-accent mb-5" aria-hidden="true"></i>
-        <h3 data-template-id="skill-design-title" class="canva-text font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Design</h3>
-        <p data-template-id="skill-design-items" class="canva-text mt-3 break-words leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Adobe Illustrator</p>
-       </article>
-      </div>
-     </div>
-    </section>
-    <section id="experience" class="section-anchor surface-main px-5 py-20 sm:px-8">
-     <div class="mx-auto w-full max-w-7xl">
-      <p data-template-id="experience-kicker" class="canva-text font-bold uppercase tracking-[.2em]" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 13px;">Experience</p>
-      <h2 data-template-id="experience-heading" class="canva-text serif mt-3 font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 24px;">Learning by making and collaborating.</h2>
+      <p data-template-id="skills-kicker" class="canva-text font-bold uppercase tracking-[.2em]" style="color: rgb(247, 214, 208); font-weight: 400; font-style: normal; font-size: 13px;">Skills</p>
+      <h2 data-template-id="skills-heading" class="canva-text serif mt-3 font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 24px;">What I bring to every project.</h2>
       <div class="mt-10 grid gap-6 lg:grid-cols-2">
-       <article data-template-id="experience-card-1" class="canva-card lift rounded-[2rem] border border-[#E2B4BD]/35 p-6 sm:p-7" style="background: rgb(74, 74, 74);">
-        <h3 data-template-id="experience-title-1" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Mobile Quiz Game</h3>
-        <div class="mt-6 grid gap-4">
-         <div>
-          <p class="project-field-label">Role</p>
-          <p data-template-id="experience-role-1" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Flutter Developer</p>
+       <article data-template-id="skills-technical-card" class="canva-card soft-card rounded-[2rem] border border-[#E2B4BD]/35 p-7 sm:p-9" style="background: rgb(74, 74, 74);">
+        <h3 data-template-id="skills-technical-title" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Technical Skills</h3>
+        <div class="mt-6">
+         <p class="flex items-center gap-2"><i data-lucide="smartphone" class="icon-accent" style="width:18px;height:18px;" aria-hidden="true"></i><span data-template-id="skills-tech-group-1" class="canva-text font-semibold" style="color: rgb(226, 180, 189); font-weight: 600; font-style: normal; font-size: 16px;">Mobile</span></p>
+         <div class="mt-3 flex flex-wrap gap-2.5">
+          <span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Flutter</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Dart</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">GetX</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Bloc / Cubit</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">State Management</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Responsive UI</span>
          </div>
-         <div>
-          <p class="project-field-label">Organization</p>
-          <p data-template-id="experience-org-1" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Personal Project</p>
+        </div>
+        <div class="mt-7">
+         <p class="flex items-center gap-2"><i data-lucide="code-2" class="icon-accent" style="width:18px;height:18px;" aria-hidden="true"></i><span data-template-id="skills-tech-group-2" class="canva-text font-semibold" style="color: rgb(226, 180, 189); font-weight: 600; font-style: normal; font-size: 16px;">Web</span></p>
+         <div class="mt-3 flex flex-wrap gap-2.5">
+          <span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">HTML</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">CSS (Flexbox &amp; Grid)</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">JavaScript</span>
          </div>
-         <div>
-          <p class="project-field-label">Dates</p>
-          <p data-template-id="experience-dates-1" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">August 2026 – September 2026</p>
+        </div>
+        <div class="mt-7">
+         <p class="flex items-center gap-2"><i data-lucide="terminal" class="icon-accent" style="width:18px;height:18px;" aria-hidden="true"></i><span data-template-id="skills-tech-group-3" class="canva-text font-semibold" style="color: rgb(226, 180, 189); font-weight: 600; font-style: normal; font-size: 16px;">Programming &amp; Tools</span></p>
+         <div class="mt-3 flex flex-wrap gap-2.5">
+          <span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">C++</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">OOP</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">File Handling</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Git</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">GitHub</span>
          </div>
-         <div>
-          <p class="project-field-label">Responsibilities</p>
-          <ul class="project-list list-disc">
-           <li data-template-id="experience-responsibility-1a" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Developed a mobile trivia quiz application using Flutter and GetX state management.</li>
-           <li data-template-id="experience-responsibility-1b" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Implemented dynamic navigation, structured question-handling logic, and real-time score tracking.</li>
-          </ul>
-         </div>
-         <div>
-          <p class="project-field-label">Achievements</p>
-          <p data-template-id="experience-achievements-1" class="canva-text mt-1 leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Delivered a smooth, interactive mobile experience supported by clean architecture and efficient state management.</p>
+        </div>
+        <div class="mt-7">
+         <p class="flex items-center gap-2"><i data-lucide="pen-tool" class="icon-accent" style="width:18px;height:18px;" aria-hidden="true"></i><span data-template-id="skills-tech-group-4" class="canva-text font-semibold" style="color: rgb(226, 180, 189); font-weight: 600; font-style: normal; font-size: 16px;">Design</span></p>
+         <div class="mt-3 flex flex-wrap gap-2.5">
+          <span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Adobe Illustrator</span>
          </div>
         </div>
        </article>
-       <article data-template-id="experience-card-2" class="canva-card lift rounded-[2rem] border border-[#E2B4BD]/35 p-6 sm:p-7" style="background: rgb(74, 74, 74);">
-        <h3 data-template-id="experience-title-2" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Braille Translation &amp; Game App</h3>
+       <article data-template-id="skills-soft-card" class="canva-card soft-card rounded-[2rem] border border-[#E2B4BD]/35 p-7 sm:p-9" style="background: rgb(74, 74, 74);">
+        <h3 data-template-id="skills-soft-title" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Soft Skills</h3>
+        <div class="mt-6 flex flex-wrap gap-2.5">
+         <span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Teamwork &amp; Collaboration</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Communication</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Problem Solving</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Attention to Detail</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Time Management</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Adaptability</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Creativity</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Continuous Learning</span><span class="skill-btn canva-text" style="color: rgb(255, 245, 245); font-weight: 500; font-style: normal; font-size: 15px;">Ownership &amp; Responsibility</span>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+
+    <!-- ========== EXPERIENCE (from LinkedIn) ========== -->
+    <section id="experience" class="section-anchor surface-main px-5 py-20 sm:px-8">
+     <div class="mx-auto w-full max-w-5xl">
+      <p data-template-id="experience-kicker" class="canva-text font-bold uppercase tracking-[.2em]" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 13px;">Experience</p>
+      <h2 data-template-id="experience-heading" class="canva-text serif mt-3 font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 24px;">Where I’ve been learning and training.</h2>
+      <div class="mt-10 grid gap-8">
+
+       <!-- Experience 1 -->
+       <div class="flex gap-5 sm:gap-8">
+        <div class="relative flex w-6 justify-center" aria-hidden="true">
+         <div class="timeline-line absolute top-2 bottom-[-2rem] w-0.5"></div><span class="z-10 mt-1 h-5 w-5 rounded-full bg-[#F7D6D0] ring-4 ring-[#E2B4BD]/55"></span>
+        </div>
+        <article data-template-id="experience-card-1" class="canva-card lift soft-card w-full rounded-[2rem] border border-[#E2B4BD]/35 p-7 sm:p-9" style="background: rgb(74, 74, 74);">
+         <p data-template-id="experience-dates-1" class="canva-text font-bold uppercase tracking-[.14em]" style="color: rgb(247, 214, 208); font-weight: 400; font-style: normal; font-size: 13px;">Jul 2026 – Present</p>
+         <h3 data-template-id="experience-title-1" class="canva-text serif mt-3 font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Cross Platform Mobile Application Trainee</h3>
+         <p data-template-id="experience-org-1" class="canva-text mt-2 font-semibold" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Digital Egypt Pioneers Initiative - DEPI</p>
+         <p data-template-id="experience-description-1" class="canva-text mt-4 leading-7" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Hands-on training in building cross-platform mobile applications with Dart and Flutter.</p>
+         <div class="mt-5 flex flex-wrap gap-2">
+          <span data-template-id="experience-skills-1" class="canva-text skill-chip" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 14px;"><i data-lucide="gem" class="icon-accent" style="width:16px;height:16px;" aria-hidden="true"></i>Dart, Flutter and +4 skills</span>
+         </div>
+        </article>
+       </div>
+
+       <!-- Experience 2 -->
+       <div class="flex gap-5 sm:gap-8">
+        <div class="relative flex w-6 justify-center" aria-hidden="true">
+         <div class="timeline-line absolute top-2 bottom-[-2rem] w-0.5"></div><span class="z-10 mt-1 h-5 w-5 rounded-full bg-[#F7D6D0] ring-4 ring-[#E2B4BD]/55"></span>
+        </div>
+        <article data-template-id="experience-card-2" class="canva-card lift soft-card w-full rounded-[2rem] border border-[#E2B4BD]/35 p-7 sm:p-9" style="background: rgb(74, 74, 74);">
+         <p data-template-id="experience-dates-2" class="canva-text font-bold uppercase tracking-[.14em]" style="color: rgb(247, 214, 208); font-weight: 400; font-style: normal; font-size: 13px;">Aug 2025 – Present</p>
+         <h3 data-template-id="experience-title-2" class="canva-text serif mt-3 font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Flurrer-trainee</h3>
+         <p data-template-id="experience-org-2" class="canva-text mt-2 font-semibold" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">OSC - Open Source Community</p>
+         <p data-template-id="experience-description-2" class="canva-text mt-4 leading-7" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Learning and practicing Flutter and Dart through guided tasks within an open-source community.</p>
+         <div class="mt-5 flex flex-wrap gap-2">
+          <span data-template-id="experience-skills-2" class="canva-text skill-chip" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 14px;"><i data-lucide="gem" class="icon-accent" style="width:16px;height:16px;" aria-hidden="true"></i>Dart, Flutter and +2 skills</span>
+         </div>
+        </article>
+       </div>
+
+       <!-- Experience 3 -->
+       <div class="flex gap-5 sm:gap-8">
+        <div class="relative flex w-6 justify-center" aria-hidden="true">
+         <div class="timeline-line absolute top-2 bottom-0 w-0.5"></div><span class="z-10 mt-1 h-5 w-5 rounded-full bg-[#F7D6D0] ring-4 ring-[#E2B4BD]/55"></span>
+        </div>
+        <article data-template-id="experience-card-3" class="canva-card lift soft-card w-full rounded-[2rem] border border-[#E2B4BD]/35 p-7 sm:p-9" style="background: rgb(74, 74, 74);">
+         <p data-template-id="experience-dates-3" class="canva-text font-bold uppercase tracking-[.14em]" style="color: rgb(247, 214, 208); font-weight: 400; font-style: normal; font-size: 13px;">Jun 2024 – Jan 2025</p>
+         <h3 data-template-id="experience-title-3" class="canva-text serif mt-3 font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Frontend-trainee</h3>
+         <p data-template-id="experience-org-3" class="canva-text mt-2 font-semibold" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Innovation Club - iClub - ASU</p>
+         <p data-template-id="experience-description-3" class="canva-text mt-4 leading-7" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Trained in front-end fundamentals, building web pages with HTML and core web development practices.</p>
+         <div class="mt-5 flex flex-wrap gap-2">
+          <span data-template-id="experience-skills-3" class="canva-text skill-chip" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 14px;"><i data-lucide="gem" class="icon-accent" style="width:16px;height:16px;" aria-hidden="true"></i>Web Development and HTML</span>
+         </div>
+        </article>
+       </div>
+
+      </div>
+     </div>
+    </section>
+
+    <!-- ========== PROJECTS (previously inside Experience) ========== -->
+    <section id="projects" class="section-anchor surface-deep px-5 py-20 sm:px-8">
+     <div class="mx-auto w-full max-w-7xl">
+      <p data-template-id="projects-kicker" class="canva-text font-bold uppercase tracking-[.2em]" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 13px;">Projects</p>
+      <h2 data-template-id="projects-heading" class="canva-text serif mt-3 font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 24px;">Learning by making and collaborating.</h2>
+      <div class="mt-10 grid gap-6 lg:grid-cols-2">
+       <article data-template-id="project-card-1" class="canva-card lift rounded-[2rem] border border-[#E2B4BD]/35 p-6 sm:p-7" style="background: rgb(74, 74, 74);">
+        <h3 data-template-id="project-title-1" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Mobile Quiz Game</h3>
         <div class="mt-6 grid gap-4">
          <div>
           <p class="project-field-label">Role</p>
-          <p data-template-id="experience-role-2" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Software Developer / Creator</p>
+          <p data-template-id="project-role-1" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Flutter Developer</p>
          </div>
          <div>
           <p class="project-field-label">Organization</p>
-          <p data-template-id="experience-org-2" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Personal Project (Published on GitHub)</p>
+          <p data-template-id="project-org-1" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Personal Project</p>
          </div>
          <div>
           <p class="project-field-label">Dates</p>
-          <p data-template-id="experience-dates-2" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">August 2026</p>
+          <p data-template-id="project-dates-1" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">August 2026 – September 2026</p>
          </div>
          <div>
           <p class="project-field-label">Responsibilities</p>
           <ul class="project-list list-disc">
-           <li data-template-id="experience-responsibility-2a" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Developed Dart logic to translate six-dot Braille patterns into readable text and convert text back into Braille.</li>
-           <li data-template-id="experience-responsibility-2b" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Designed an interactive learning game to make Braille pattern practice engaging and accessible.</li>
+           <li data-template-id="project-responsibility-1a" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Developed a mobile trivia quiz application using Flutter and GetX state management.</li>
+           <li data-template-id="project-responsibility-1b" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Implemented dynamic navigation, structured question-handling logic, and real-time score tracking.</li>
           </ul>
          </div>
          <div>
           <p class="project-field-label">Achievements</p>
-          <p data-template-id="experience-achievements-2" class="canva-text mt-1 leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Published the braille_game repository on GitHub, combining accessibility concepts with thoughtful interactive software design.</p>
+          <p data-template-id="project-achievements-1" class="canva-text mt-1 leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Delivered a smooth, interactive mobile experience supported by clean architecture and efficient state management.</p>
+         </div>
+         <div>
+          <a data-template-id="project-link-1" class="canva-link interactive-link focus-ring inline-flex items-center gap-2 font-semibold" href="https://github.com/Sara-Abdelmoniem/Quiz_game" target="_blank" rel="noopener noreferrer" style="color: rgb(247, 214, 208); font-weight: 600; font-style: normal; font-size: 16px;"><i data-lucide="github" style="width:18px;height:18px;" aria-hidden="true"></i><span>View on GitHub</span></a>
          </div>
         </div>
        </article>
-       <article data-template-id="experience-card-3" class="canva-card lift rounded-[2rem] border border-[#E2B4BD]/35 p-6 sm:p-7" style="background: rgb(74, 74, 74);">
-        <h3 data-template-id="experience-title-3" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Bonus Tracker App / Student Activity</h3>
+       <article data-template-id="project-card-2" class="canva-card lift rounded-[2rem] border border-[#E2B4BD]/35 p-6 sm:p-7" style="background: rgb(74, 74, 74);">
+        <h3 data-template-id="project-title-2" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Braille Translation &amp; Game App</h3>
         <div class="mt-6 grid gap-4">
          <div>
           <p class="project-field-label">Role</p>
-          <p data-template-id="experience-role-3" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Collaborative Flutter Developer</p>
+          <p data-template-id="project-role-2" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Software Developer / Creator</p>
          </div>
          <div>
           <p class="project-field-label">Organization</p>
-          <p data-template-id="experience-org-3" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">University Student Activity Team</p>
+          <p data-template-id="project-org-2" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Personal Project (Published on GitHub)</p>
          </div>
          <div>
           <p class="project-field-label">Dates</p>
-          <p data-template-id="experience-dates-3" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">September 2026</p>
+          <p data-template-id="project-dates-2" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">August 2026</p>
          </div>
          <div>
           <p class="project-field-label">Responsibilities</p>
           <ul class="project-list list-disc">
-           <li data-template-id="experience-responsibility-3a" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Collaborated with student activity members on UI component concepts and state-management architecture.</li>
-           <li data-template-id="experience-responsibility-3b" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Contributed to a dashboard and tracking system for committee tasks, meetings, and events.</li>
+           <li data-template-id="project-responsibility-2a" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Developed Dart logic to translate six-dot Braille patterns into readable text and convert text back into Braille.</li>
+           <li data-template-id="project-responsibility-2b" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Designed an interactive learning game to make Braille pattern practice engaging and accessible.</li>
           </ul>
          </div>
          <div>
           <p class="project-field-label">Achievements</p>
-          <p data-template-id="experience-achievements-3" class="canva-text mt-1 leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Improved workflow visibility and team collaboration through shared version control and modular Flutter components.</p>
+          <p data-template-id="project-achievements-2" class="canva-text mt-1 leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Published the braille_game repository on GitHub, combining accessibility concepts with thoughtful interactive software design.</p>
+         </div>
+         <div>
+          <a data-template-id="project-link-2" class="canva-link interactive-link focus-ring inline-flex items-center gap-2 font-semibold" href="https://github.com/Sara-Abdelmoniem/braille_game" target="_blank" rel="noopener noreferrer" style="color: rgb(247, 214, 208); font-weight: 600; font-style: normal; font-size: 16px;"><i data-lucide="github" style="width:18px;height:18px;" aria-hidden="true"></i><span>View on GitHub</span></a>
          </div>
         </div>
        </article>
-       <article data-template-id="experience-card-4" class="canva-card lift rounded-[2rem] border border-[#E2B4BD]/35 p-6 sm:p-7" style="background: rgb(74, 74, 74);">
-        <h3 data-template-id="experience-title-4" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Systems &amp; Web Projects / C++ &amp; Web</h3>
+       <article data-template-id="project-card-3" class="canva-card lift rounded-[2rem] border border-[#E2B4BD]/35 p-6 sm:p-7" style="background: rgb(74, 74, 74);">
+        <h3 data-template-id="project-title-3" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Bonus Tracker App / Student Activity</h3>
         <div class="mt-6 grid gap-4">
          <div>
           <p class="project-field-label">Role</p>
-          <p data-template-id="experience-role-4" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Software Engineer / Front-End Developer</p>
+          <p data-template-id="project-role-3" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Collaborative Flutter Developer</p>
          </div>
          <div>
           <p class="project-field-label">Organization</p>
-          <p data-template-id="experience-org-4" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Academic &amp; Personal Projects</p>
+          <p data-template-id="project-org-3" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">University Student Activity Team</p>
          </div>
          <div>
           <p class="project-field-label">Dates</p>
-          <p data-template-id="experience-dates-4" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">2025 – 2026</p>
+          <p data-template-id="project-dates-3" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">September 2026</p>
          </div>
          <div>
           <p class="project-field-label">Responsibilities</p>
           <ul class="project-list list-disc">
-           <li data-template-id="experience-responsibility-4a" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Developed a C++ animal adoption management system using file handling and structured data-management techniques.</li>
-           <li data-template-id="experience-responsibility-4b" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Built educational web interfaces and interactive projects for children using HTML, CSS with Flexbox and Grid, and JavaScript.</li>
+           <li data-template-id="project-responsibility-3a" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Collaborated with student activity members on UI component concepts and state-management architecture.</li>
+           <li data-template-id="project-responsibility-3b" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Contributed to a dashboard and tracking system for committee tasks, meetings, and events.</li>
           </ul>
          </div>
          <div>
           <p class="project-field-label">Achievements</p>
-          <p data-template-id="experience-achievements-4" class="canva-text mt-1 leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Demonstrated versatility across systems programming, web development, and cross-platform mobile application development.</p>
+          <p data-template-id="project-achievements-3" class="canva-text mt-1 leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Improved workflow visibility and team collaboration through shared version control and modular Flutter components.</p>
+         </div>
+        </div>
+       </article>
+       <article data-template-id="project-card-4" class="canva-card lift rounded-[2rem] border border-[#E2B4BD]/35 p-6 sm:p-7" style="background: rgb(74, 74, 74);">
+        <h3 data-template-id="project-title-4" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Animal Adoption Management System / C++</h3>
+        <div class="mt-6 grid gap-4">
+         <div>
+          <p class="project-field-label">Role</p>
+          <p data-template-id="project-role-4" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Software Engineer</p>
+         </div>
+         <div>
+          <p class="project-field-label">Organization</p>
+          <p data-template-id="project-org-4" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Academic &amp; Personal Projects</p>
+         </div>
+         <div>
+          <p class="project-field-label">Dates</p>
+          <p data-template-id="project-dates-4" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">2025 – 2026</p>
+         </div>
+         <div>
+          <p class="project-field-label">Responsibilities</p>
+          <ul class="project-list list-disc">
+           <li data-template-id="project-responsibility-4a" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Developed a C++ animal adoption management system using file handling and structured data-management techniques.</li>
+          </ul>
+         </div>
+         <div>
+          <p class="project-field-label">Achievements</p>
+          <p data-template-id="project-achievements-4" class="canva-text mt-1 leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Applied systems programming, file handling, and structured data management in a complete C++ application.</p>
+         </div>
+        </div>
+       </article>
+       <article data-template-id="project-card-5" class="canva-card lift rounded-[2rem] border border-[#E2B4BD]/35 p-6 sm:p-7 lg:col-span-2 lg:mx-auto lg:w-[calc(50%-.75rem)]" style="background: rgb(74, 74, 74);">
+        <h3 data-template-id="project-title-5" class="canva-text serif font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 19px;">Educational Web Projects for Children / Web</h3>
+        <div class="mt-6 grid gap-4">
+         <div>
+          <p class="project-field-label">Role</p>
+          <p data-template-id="project-role-5" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Front-End Developer</p>
+         </div>
+         <div>
+          <p class="project-field-label">Organization</p>
+          <p data-template-id="project-org-5" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Academic &amp; Personal Projects</p>
+         </div>
+         <div>
+          <p class="project-field-label">Dates</p>
+          <p data-template-id="project-dates-5" class="canva-text mt-1" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">2025 – 2026</p>
+         </div>
+         <div>
+          <p class="project-field-label">Responsibilities</p>
+          <ul class="project-list list-disc">
+           <li data-template-id="project-responsibility-5a" class="canva-text" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">Built educational web interfaces and interactive projects for children using HTML, CSS with Flexbox and Grid, and JavaScript.</li>
+          </ul>
+         </div>
+         <div>
+          <p class="project-field-label">Achievements</p>
+          <p data-template-id="project-achievements-5" class="canva-text mt-1 leading-7" style="color: rgb(226, 180, 189); font-weight: 400; font-style: normal; font-size: 16px;">Created engaging, responsive web experiences for young learners with modern layout techniques.</p>
          </div>
         </div>
        </article>
       </div>
      </div>
     </section>
+
     <section id="services" class="section-anchor surface-muted px-5 py-20 sm:px-8">
      <div class="mx-auto w-full max-w-7xl">
       <p data-template-id="services-kicker" class="canva-text font-bold uppercase tracking-[.2em]" style="color: rgb(247, 214, 208); font-weight: 400; font-style: normal; font-size: 13px;">Services</p>
@@ -388,9 +556,9 @@
       <p data-template-id="contact-kicker" class="canva-text font-bold uppercase tracking-[.2em]" style="color: rgb(247, 214, 208); font-weight: 400; font-style: normal; font-size: 13px;">Let’s connect</p>
       <h2 data-template-id="contact-heading" class="canva-text serif mt-4 font-bold" style="color: rgb(255, 245, 245); font-weight: 700; font-style: normal; font-size: 24px;">Have an Idea for an App? Let’s Bring It to Life.</h2>
       <p data-template-id="contact-copy" class="canva-text mt-5 leading-8" style="color: rgb(255, 245, 245); font-weight: 400; font-style: normal; font-size: 16px;">I’m always interested in connecting with people who have creative ideas and want to build meaningful digital experiences. Let’s discuss your next project!</p>
-      <div class="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row"><a id="email-button" data-template-id="contact-button" class="canva-button focus-ring inline-flex items-center gap-2 rounded-full px-7 py-4 font-bold" href="mailto:saraabdelmonem735@gmail.com" style="background: rgb(247, 214, 208); color: rgb(58, 58, 58);"> <i data-lucide="mail" aria-hidden="true"></i> <span data-template-id="contact-button-text" class="canva-text" style="color: rgb(58, 58, 58); font-weight: 700; font-style: normal; font-size: 16px;">Let’s Talk</span> </a> <a id="email-link" data-template-id="email-link" class="canva-link interactive-link focus-ring rounded-full px-5 py-3 font-semibold" href="mailto:saraabdelmonem735@gmail.com" style="color: rgb(247, 214, 208); font-weight: 600; font-style: normal; font-size: 16px;">saraabdelmonem735@gmail.com</a>
+      <div class="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row"><a id="email-button" data-template-id="contact-button" class="canva-button focus-ring inline-flex items-center gap-2 rounded-full px-7 py-4 font-bold" href="mailto:saraabdelmonem735@gmail.com" style="background: rgb(247, 214, 208); color: rgb(58, 58, 58);"> <i data-lucide="mail" aria-hidden="true"></i> <span data-template-id="contact-button-text" class="canva-text" style="color: rgb(58, 58, 58); font-weight: 700; font-style: normal; font-size: 16px;">Let’s Talk</span> </a> <a id="cv-button" data-template-id="cv-button" class="canva-button focus-ring inline-flex items-center gap-2 rounded-full border border-[#E2B4BD] px-7 py-4 font-bold transition hover:border-[#F7D6D0] hover:text-[#F7D6D0]" href="cv/Sara-Abdelmoniem-CV.pdf" download style="color: rgb(255, 245, 245);"> <i data-lucide="download" aria-hidden="true"></i> <span data-template-id="cv-button-text" class="canva-text" style="color: inherit; font-weight: 700; font-style: normal; font-size: 16px;">Download CV</span> </a> <a id="email-link" data-template-id="email-link" class="canva-link interactive-link focus-ring rounded-full px-5 py-3 font-semibold" href="mailto:saraabdelmonem735@gmail.com" style="color: rgb(247, 214, 208); font-weight: 600; font-style: normal; font-size: 16px;">saraabdelmonem735@gmail.com</a>
       </div>
-      <div class="mt-7 flex justify-center gap-3"><a id="linkedin-link" data-template-id="linkedin-link" class="canva-link focus-ring rounded-full border border-[#E2B4BD] p-3 text-[#FFF5F5] transition hover:border-[#F7D6D0] hover:text-[#F7D6D0]" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile" style="color: rgb(255, 245, 245);"> <i data-lucide="linkedin" aria-hidden="true"></i> </a> <a id="github-link" data-template-id="github-link" class="canva-link focus-ring rounded-full border border-[#E2B4BD] p-3 text-[#FFF5F5] transition hover:border-[#F7D6D0] hover:text-[#F7D6D0]" href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile" style="color: rgb(255, 245, 245);"> <i data-lucide="github" aria-hidden="true"></i> </a>
+      <div class="mt-7 flex justify-center gap-3"><a id="linkedin-link" data-template-id="linkedin-link" class="canva-link focus-ring rounded-full border border-[#E2B4BD] p-3 text-[#FFF5F5] transition hover:border-[#F7D6D0] hover:text-[#F7D6D0]" href="https://www.linkedin.com/in/sara-abdel-moniem-47b61b238/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile" style="color: rgb(255, 245, 245);"> <i data-lucide="linkedin" aria-hidden="true"></i> </a> <a id="github-link" data-template-id="github-link" class="canva-link focus-ring rounded-full border border-[#E2B4BD] p-3 text-[#FFF5F5] transition hover:border-[#F7D6D0] hover:text-[#F7D6D0]" href="https://github.com/Sara-Abdelmoniem" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile" style="color: rgb(255, 245, 245);"> <i data-lucide="github" aria-hidden="true"></i> </a>
       </div>
      </div>
     </section>
@@ -406,7 +574,7 @@
       github: "https://github.com/Sara-Abdelmoniem"
     };
 
-    const navigationSections = ["cover", "about", "usp", "education", "skills", "experience", "services", "contact"];
+    const navigationSections = ["cover", "about", "usp", "education", "skills", "experience", "projects", "services", "contact"];
 
     document.getElementById("email-button").href = `mailto:${PORTFOLIO_CONFIG.email}`;
     document.getElementById("email-link").href = `mailto:${PORTFOLIO_CONFIG.email}`;
